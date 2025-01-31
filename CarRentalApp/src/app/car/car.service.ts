@@ -14,8 +14,8 @@ export class CarService {
     return this.http.get(`${this.apiUrl}GetCars`)
   }
 
-  createCars(obj:any){
-    return this.http.post(`${this.apiUrl}CreateNewCars`,obj)
+  createCar(obj: any) { 
+    return this.http.post(`${this.apiUrl}CreateNewCar`,obj)
   }
 
   updateCars(obj:any){
@@ -23,7 +23,6 @@ export class CarService {
   }
 
   deleteCars(cardid:any){
-    return this.http.delete(`${this.apiUrl}DeleteCarbyCarId=${cardid}`)
-  }
+    return this.http.delete(`${this.apiUrl}DeleteCarbyCarId?carid=${cardid}`)  }
 
 }

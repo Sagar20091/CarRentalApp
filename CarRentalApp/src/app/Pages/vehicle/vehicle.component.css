@@ -1,0 +1,123 @@
+.card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-img-top {
+    object-fit: cover;
+  }
+  
+  .badge {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+  .car-image {
+    height: 130px; /* Set a fixed height */
+    object-fit: cover; /* Ensure it covers the space properly */
+    border-radius: 10px; /* Optional: Rounded corners */
+  }
+
+  /* Custom Styling for Offcanvas */
+.custom-offcanvas {
+    width: 400px; /* Adjust width */
+    background: #f8f9fa; /* Light gray background */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    transition: transform 0.3s ease-in-out; /* Smooth opening animation */
+  }
+  
+  /* Offcanvas Body */
+  .custom-offcanvas-body {
+    padding: 20px;
+    font-size: 14px;
+  }
+  
+  /* Labels Styling */
+  .custom-offcanvas-body label {
+    font-weight: bold;
+    color: #555;
+  }
+  
+  /* Input Fields Styling */
+  .custom-offcanvas-body input {
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    padding: 8px;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .custom-offcanvas-body input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  /* Buttons */
+  .btn-success {
+    background-color: #28a745;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+  }
+  
+  .btn-warning {
+    background-color: #ffc107;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    color: black;
+  }
+  
+  .btn-secondary {
+    background-color: #6c757d;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+  }
+
+ /* Stylish Car Portal Heading */
+.portal-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    background: linear-gradient(to right, #ff5733, #ff8c00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Hover Effect */
+  .portal-title:hover {
+    transform: scale(1.05);
+    text-shadow: 3px 3px 12px rgba(255, 87, 51, 0.6);
+  }
+  
+  /* Styling for the moving car icon */
+  .car-icon-moving {
+    font-size: 40px; /* Adjust size of the icon */
+    margin-left: 15px;
+    display: inline-block; /* Ensures it moves as a block element */
+    animation: moveCar 12s linear infinite; /* Slow movement with 12 seconds duration */
+  }
+  
+  /* Keyframe Animation for the moving car (800px right and back) */
+  @keyframes moveCar {
+    0% {
+      transform: translateX(0); /* Start position */
+    }
+    50% {
+      transform: translateX(800px); /* Move car to the right */
+    }
+    100% {
+      transform: translateX(0); /* Return to original position */
+    }
+  }
+  

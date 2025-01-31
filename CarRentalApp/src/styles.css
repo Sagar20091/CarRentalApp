@@ -95,13 +95,13 @@
         align-items: center;
     }
     
-    input{
+    /* input{
         height: 100%;
         border: none;
         margin-left: 5px;
         outline: none;
         font-family: "Roboto", sans-serif;
-    }
+    } */
     
     .account-controls {
         display: flex;

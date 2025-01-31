@@ -1,16 +1,19 @@
 <div class="container-fluid pt-1">
     <div class="row"> 
-      <div class="col-6 text-start">
-        Car Portal
-      </div>
+        <div class="col-6 text-start">
+            <h2 class="portal-title">Car Portal</h2>
+            <span class="car-icon-moving">🚗</span>
+          </div>
       <div class="col-6 text-end pt-1">
-        <button class="btn btn-warning btn-sm" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"> Add New</button>
+        <button class="btn btn-warning btn-sm" 
+        data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+         Add New</button>
       </div>
     </div>
     <div class="row">
         <div class="col-3 pt-3" *ngFor="let item of carList">
             <div class="card">
-                <img  [src]="item.carImage" height="100" />
+                <img  [src]="item.carImage" class="card-img-top car-image rounded" />
                 <div class="card-body">
                   <div class="row">
                     <div class="col-8 text-start">
@@ -32,18 +35,63 @@
                     </div>
                     <div class="row">
                         <div class="col-6 text-start">
-                            <button class="btn btn-outline-danger btn-sm">Delete</button>
+                            <button class="btn btn-outline-danger btn-sm" (click)="Ondelete(item.carId)">Delete</button>
                         </div>
                         <div class="col-6 text-end">
-                            <button class="btn btn-outline-success btn-sm">Edit</button>
+                            <button class="btn btn-outline-success btn-sm"
+                             data-bs-toggle="offcanvas" (click)="OnEdit(item)" data-bs-target="#offcanvasExample">Edit</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-      
-   
+</div>
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel"> {{ isEditMode ? 'Update Car' : 'Add New Car' }}</h5>
+      <button type="button" (click)="onAddNewCar()" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body custom-offcanvas-body" [formGroup]="carForm"> 
+      <div class="row">
+        <div class="col-6 mt-2">
+          <label>Reg No</label>
+          <input type="text" class="form-control"  formControlName="regNo" placeholder="Enter Reg No" />
+        </div>
+        <div class="col-6 mt-2">
+          <label>Brand</label>
+          <input type="text" class="form-control"  formControlName="brand" placeholder="Enter brand name" />
+        </div>
+        <div class="col-6 mt-2">
+          <label>Model</label>
+          <input type="text" class="form-control"  formControlName="model" placeholder="Enter model name" />
+        </div>
+        <div class="col-6 mt-2">
+          <label>Year</label>
+          <input type="text" class="form-control"  formControlName="year" placeholder="Enter year" />
+        </div>
+        <div class="col-6 mt-2">
+          <label>Color</label>
+          <input type="text" class="form-control"  formControlName="color" placeholder="Enter color" />
+        </div>
+        <div class="col-6 mt-2">
+          <label>Daily Rate</label>
+          <input type="text" class="form-control"  formControlName="dailyRate" placeholder="Enter daily rate" />
+        </div>
+        <div class="col-6 mt-2">
+          <label>Car Image URL</label>
+          <input type="text" class="form-control"  formControlName="carImage" placeholder="Enter car image url" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 mt-2 text-center">
+          <button class="btn btn-sm btn-secondary m-1">Reset</button>
+          <button *ngIf="!isEditMode"  class="btn btn-sm btn-success" (click)="saveCar()">Save Car</button>
+          <button *ngIf="isEditMode" class="btn btn-sm btn-success" (click)="updateCar()">Update Car</button>
+        </div>
+      </div>
+    </div>
   </div>
 
   
